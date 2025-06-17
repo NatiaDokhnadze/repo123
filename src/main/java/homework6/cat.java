@@ -1,39 +1,26 @@
 package homework6;
 
 public class cat {
-   private String name;
+   String name;
    private String breed;
-   private int age;
-   private String gender;
-   private int bitSize=10; //პრივატ კლასია და მხოლოდ კლასის შიგნით არის ხელმისაწვდომი
+    int age;
+    String gender;
+    int biteSize=10;
+    //ვქმნით კონსტრუქტორს:
 
-    //კონსტრუქტორი
-    public cat(String name, String breed, int age, String gender, int bitSize) {
+    public cat() {
         this.name = name;
         this.breed = breed;
         this.age = age;
         this.gender = gender;
-        this.bitSize = bitSize;
     }
-    //ვიყენებთ getter ასაკისთვის
-    public int getAge() {
-        return age;
-    }
-    //ვიყენებთ getter and setter ნეიმისთვის
-    public String getName() {
+    //გამოვიყენოთ Getter სახელისთვის:
+
+     String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    //ვიყენებთ getter ჯიშისთვის
-    public String getBreed() {
-        return breed;
-    }
-    //ვიყენებთ getter and setter სქესისთვის
-
+//setter and getter for gender:
     public String getGender() {
         return gender;
     }
@@ -42,24 +29,19 @@ public class cat {
         this.gender = gender;
     }
 
-    //შევქმნათ მეთოდი makeSound()
-    public void makeSound() {
-        System.out.println("mewing");
+    //შევქმენით მეთოდი 1:
+    void meow() {
+        System.out.println("meowing...");//დაიბეჭდება ეს.
     }
+    //შევქმენით მეთოდი 2:
+    void eat(int grams) {
+        int bites = grams / 10;  //10-ზე გაყოფით ვითვლით რამდენი სრული ლუკმაა
+        if (grams % 10 != 0) {   //ვიგებთ თუ ზუსტად იყოფა ლუკმებად თუ ლუკმის გარდა რჩება ექსტა გრამები
+            bites++;  //ყველა შემთხვევაში კიდევ ერთ ლუკამდ შეჭამს
+        }
 
-    //შევქმნათ მეთოდი eat(int grams)
-    public void eat(int grams) {
-        int bite = grams/10; //ვიგებთ ერთი ლუკმა რამდენი გრამია
-        if (grams % 10 !=0) {//10 გრამიან ლუკმებად დაყოფისას რჩება თუ არა გრამები
-        bite ++;
-    }
-        for (int i =0;i < bite; i++) {
+        for (int i = 0; i < bites; i++) {
             System.out.println("eating...");
         }
-        }
+    }
 }
-
-
-
-
-
