@@ -1,20 +1,19 @@
 package homework7;
 
+import java.util.ArrayList;
+
 public class Main {
-    //აქედან ვიწყებთ პროგრამას
     public static void main(String[] args) {
-        //შევქმენით ობიექტი TextAnalyzer მისი ფუნქციები რომ გამოვიყენოთ
         TextAnalyzer analyzer = new TextAnalyzer();
-//ვწერთ რამდენიმე წინადადებას რომ მერე ბილდერით ავაწყოთ
-        String inputText = "Here must be text.MY name is Natia.I live in Spain";
-        analyzer.addText(inputText);
-//ვბეჭდავთ ყველა წინადადებას ცალ-ცალკე.
-        System.out.println("Sentences:");
-        for (String sentence : analyzer.getSentences()) {
-            System.out.println(sentence);
+
+        String text = "ეს არის პირველი წინადადება. ეს არის მეორე წინადადება. მესამეში არის სიტყვა პროგრამირება. ეს უბრალოდ ტესტია.";
+        analyzer.addText(text);
+
+        System.out.println(" წინადადებები, რომლებიც შეიცავს სიტყვას 'პროგრამ':");
+
+        ArrayList<String> results = analyzer.findWordsContaining("პროგრამ");
+        for (String sentence : results) {
+            System.out.println("- " + sentence);
         }
-//ბოლოს ვბეჭდავთ რეპორტს, სადაც ჩანს რომელი წინადადებები დაემატა.
-        System.out.println("\nReport:");
-        System.out.println(analyzer.getReport());
     }
 }

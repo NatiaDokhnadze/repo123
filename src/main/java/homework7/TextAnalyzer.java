@@ -1,38 +1,69 @@
 package homework7;
 
-import java.util.ArrayList; //ვაიმპორტებთ ერაის
+import java.util.ArrayList;
 
-//შევქმენით მეთოდი შემდეგი ცვლადებით:
 public class TextAnalyzer {
-    private ArrayList<String> sentences;// წინადადებების სია
-    private StringBuilder report;//ტექსტის ასაწყობად ვიყენებთ
-//ვქმნით კონსტრუქტორს
+    private ArrayList<String> sentences;
+    private StringBuilder report;
+
     public TextAnalyzer() {
-        sentences = new ArrayList<>(); //წინადადებების შესანახად
-        report = new StringBuilder(); //რეპორტების შესაქმნელად
+        this.sentences = new ArrayList<>();
+        this.report = new StringBuilder();
     }
 
     public void addText(String text) {
-        String[] splitSentences = text.split("\\."); // წერტილით ვყოფთ წინადადებებს
-
-        for (String sentence : splitSentences) {//ციკლით გადავდივართ ყოველ მომდევნო წინადადებაზე
-            sentence = sentence.trim(); // ვშლით ცარლიელ ადგილებს წინადადების თავში და ბოლოში
-            if (!sentence.isEmpty()) { //ამ კოდით ვიგებთ თუ ცარიელი არაა წინადდადება
-                sentences.add(sentence); //თუ ცარიელი არაა მაშინ ვამატებთ ტექსტს
-                report.append("Added sentence: ").append(sentence).append("\n"); //რეპორტებში ვამატებთ ინფოს
-                                                                                //რომ წინადადება დავამატეთ.
+        String[] splitSentences = text.split("\\.");
+        for (String sentence : splitSentences) {
+            String trimmed = sentence.trim();
+            if (!trimmed.isEmpty()) {
+                sentences.add(trimmed);
             }
         }
     }
-//ეს მეთოდი აბრუნებს წინადადებების სიას
+
     public ArrayList<String> getSentences() {
         return sentences;
     }
-//ეს მეთოდი აბრუნებს რეპორტებს
-    public StringBuilder getReport() {
-        return report;
+
+    public String generateWordReport(int index) {
+        if (index < 0 || index >= sentences.size()) {
+            return "წინადადება ვერ მოიძებნა: ინდექსი " + index;
+        }
+
+        String sentence = sentences.get(index);
+        String[] words = sentence.split("\\s+");
+
+        int wordCount = words.length;
+        String longestWord = "";
+
+        for (String word : words) {
+            if (word.length() > longestWord.length()) {
+                longestWord = word;
+            }
+        }
+
+        report.setLength(0);
+        report.append(" სიტყვების სტატისტიკა წინადადებაზე [")
+                .append(index)
+                .append("]:\n");
+        report.append(" წინადადება: ").append(sentence).append("\n");
+        report.append(" სიტყვების რაოდენობა: ").append(wordCount).append("\n");
+        report.append(" ყველაზე გრძელი სიტყვა: ").append(longestWord);
+
+        return report.toString();
+    }
+
+    public ArrayList<String> findWordsContaining(String pattern) {
+        ArrayList<String> matchedSentences = new ArrayList<>();
+        String lowerCasePattern = pattern.toLowerCase();
+
+        for (String sentence : sentences) {
+            if (sentence.toLowerCase().contains(lowerCasePattern)) {
+                matchedSentences.add(sentence);
+            }
+        }
+
+        return matchedSentences;
     }
 }
-
-
 
