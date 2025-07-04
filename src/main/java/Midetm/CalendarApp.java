@@ -52,7 +52,7 @@ public class CalendarApp {
 
         LocalDate date = null;
 
-        // ვცდილობთ სწორი თარიღი მივიღოთ (ფორმატი: yyyy-MM-dd)
+        // თარიღი უნდა დავბეჭდოთ ამ ფორმატით: yyyy-MM-dd
         while (date == null) {
             System.out.print("თარიღი (yyyy-MM-dd): ");
             String input = sc.nextLine();
@@ -87,7 +87,7 @@ public class CalendarApp {
             }
         }
 
-        // ფილტრაცია: მხოლოდ იმ ივენთების ჩვენება რომლებიც მითითებულ თარიღზეა
+        // მხოლოდ იმ ივენთების ჩვენება რომლებიც მითითებულ თარიღშია
         boolean found = false;
         for (Event e : events) {
             if (e.getDate().equals(date)) {
