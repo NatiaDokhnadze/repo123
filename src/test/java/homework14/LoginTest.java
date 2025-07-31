@@ -2,7 +2,7 @@ package homework14;
 
 import Data.CredentialsDataProvider;
 import org.testng.annotations.Test;
-import pages.LoginPage;
+import page.LoginPage;
 
 public class LoginTest extends BaseTest {
 
