@@ -1,8 +1,8 @@
 // FileHandler.java
-package util;
+package homework17;
 
 import java.io.*;
-import java.nio.file.*;
+
 import com.codeborne.selenide.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.*;

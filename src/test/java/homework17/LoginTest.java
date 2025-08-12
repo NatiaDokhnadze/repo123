@@ -2,11 +2,9 @@
 package homework17;
 
 import com.codeborne.selenide.Configuration;
-import data.UserDataProvider;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.LoginPage;
-import util.FileHandler;
 
 public class LoginTest {
 

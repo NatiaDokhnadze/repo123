@@ -1,8 +1,7 @@
 // UserDataProvider.java
-package data;
+package homework17;
 
 import org.testng.annotations.DataProvider;
-import homework17.FileHandler;
 
 import java.io.*;
 import java.util.*;

@@ -1,4 +1,4 @@
-package ge.ourstore.query;
+package homework18.query;
 
 //  ეს კლასი უზრუნველყოფს SQL query-ების გენერაციას ჩვენი ბაზისთვის
 public class OurStoreQueryManager {

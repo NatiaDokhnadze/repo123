@@ -1,4 +1,4 @@
-package homework16; // package-ს სახელი (შენ შეგიძლია სხვა სახელი დაარქვა, სადაც შენ ინახავ utility კლასებს)
+package homework16; // package-ს სახელი
 
 import com.codeborne.selenide.Configuration; // Selenide-ის კონფიგურაცია
 import com.codeborne.selenide.SelenideElement; // Selenide-ის ელემენტის ტიპი

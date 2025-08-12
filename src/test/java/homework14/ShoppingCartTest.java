@@ -9,7 +9,7 @@ public class ShoppingCartTest extends BaseTest {
     @Test(priority = 2)
     public void testShoppingCartFlow() {
         // Login
-        page.LoginPage loginPage = new LoginPage()
+        homework17.LoginPage loginPage = new LoginPage()
                 .enterUsername("standard_user")
                 .enterPassword("secret_sauce");
         loginPage.clickLogin();
