@@ -1,11 +1,11 @@
-package Tests;
+package tests;
 
 import model.Product;
 import page.HomePage;
 import page.KidsSectionPage;
 import service.SwoopExcelExportService;
 
-import org.testng.annotations.Test;
+import org.testng.annotations.tes'ts;
 import java.util.List;
 
 public class SwoopProductScrapingTest {
